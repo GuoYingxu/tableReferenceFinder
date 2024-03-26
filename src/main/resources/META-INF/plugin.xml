@@ -26,12 +26,11 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-
+        <toolWindow factoryClass="com.qst.develop.toolkit.tablereferencefinder.window.RefMapWindowFactory" id="RefMapToolWindow"
+                    anchor="right"
+                    icon="/icons/cherryPick.svg"
+        />
     </extensions>
     <actions>
-        <action id="FindRefMapAction" class="com.qst.develop.toolkit.tablereferencefinder.action.FindRefMapAction"
-                text="FindRefMapAction" description="FindRefMapAction">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
-        </action>
     </actions>
 </idea-plugin>
