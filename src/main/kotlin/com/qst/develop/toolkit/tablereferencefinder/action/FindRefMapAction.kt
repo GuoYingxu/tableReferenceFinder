@@ -3,6 +3,7 @@ package com.qst.develop.toolkit.tablereferencefinder.action
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.DumbAwareAction
+import com.intellij.openapi.ui.popup.JBPopupFactory
 import com.qst.develop.toolkit.tablereferencefinder.window.TableReferenceFinderPanel
 import com.qst.develop.toolkit.tablereferencefinder.window.TableReferenceFinderPanelFactory
 
@@ -14,9 +15,25 @@ class FindRefMapAction: DumbAwareAction() {
         if (panel == null) {
             val tableReferenceFinderPanel =  TableReferenceFinderPanelFactory.createPanel(e.project!!)
             e.project?.putUserData(TableReferenceFinderPanel.TABLE_REFERENCE_FINDER_PANEL, tableReferenceFinderPanel)
-            tableReferenceFinderPanel.show()
+            tableReferenceFinderPanel.isVisible = true
+
+            JBPopupFactory.getInstance()
+                .createComponentPopupBuilder(tableReferenceFinderPanel, tableReferenceFinderPanel)
+                .setResizable(true)
+                .setMovable(true)
+                .setTitle("Table Reference Finder")
+                .createPopup()
+                .showCenteredInCurrentWindow(e.project!!)
+
         } else {
-            panel.show()
+            panel.isVisible =true
+            JBPopupFactory.getInstance()
+                .createComponentPopupBuilder(panel, panel)
+                .setResizable(true)
+                .setMovable(true)
+                .setTitle("Table Reference Finder")
+                .createPopup()
+                .showCenteredInCurrentWindow(e.project!!)
         }
     }
 }

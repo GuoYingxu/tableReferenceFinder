@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull
 class TableReferenceFinderPanelFactory {
     companion object{
         fun createPanel(@NotNull project:Project): TableReferenceFinderPanel {
-            return TableReferenceFinderPanel()
+            return TableReferenceFinderPanel(project)
         }
     }
 }
