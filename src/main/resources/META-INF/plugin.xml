@@ -32,5 +32,9 @@
         />
     </extensions>
     <actions>
+        <action id="showRefMapAction" class="com.qst.develop.toolkit.tablereferencefinder.action.ShowRefMapAction"
+                text="showRefMapAction" description="showRefMapAction">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
     </actions>
 </idea-plugin>

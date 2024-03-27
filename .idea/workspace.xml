@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75602064-f346-4a98-8a89-63e49db31daa" name="Changes" comment="添加一个弹窗">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/qst/develop/toolkit/tablereferencefinder/service/FinderService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/qst/develop/toolkit/tablereferencefinder/window/RefMapWindowFactory.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons/cherryPick.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons/cherryPick_dark.svg" afterDir="false" />
+    <list default="true" id="75602064-f346-4a98-8a89-63e49db31daa" name="Changes" comment="添加一个toolwindow">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/qst/develop/toolkit/tablereferencefinder/ToolKitIcon.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/qst/develop/toolkit/tablereferencefinder/action/ShowRefMapAction.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/qst/develop/toolkit/tablereferencefinder/model/RefChainModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/qst/develop/toolkit/tablereferencefinder/service/ChainNode.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/qst/develop/toolkit/tablereferencefinder/service/RefTreeStructure.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/icons/accessorIcon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/icons/controllerIcon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/icons/mapperIcon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/icons/serviceIcon.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qst/develop/toolkit/tablereferencefinder/service/FinderService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qst/develop/toolkit/tablereferencefinder/service/FinderService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qst/develop/toolkit/tablereferencefinder/window/TableReferenceFinderPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qst/develop/toolkit/tablereferencefinder/window/TableReferenceFinderPanel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
@@ -35,7 +39,22 @@
             </after_sync>
           </activation>
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tableReferenceFinder" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tableReferenceFinder" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -43,6 +62,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Action" />
+        <option value="Kotlin Data Class" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -52,6 +72,12 @@
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2023.3.2/10c6e2167c4f10b06d74fbc24823728c619c9157/ideaIC-2023.3.2/lib/app-client.jar!/com/intellij/ui/components/JBScrollPane.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-17.0.10/lib/src.zip!/java.desktop/java/awt/Component.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-17.0.10/lib/src.zip!/java.desktop/java/awt/LayoutManager.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-17.0.10/lib/src.zip!/java.desktop/javax/swing/JPanel.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -111,7 +137,9 @@
       <workItem from="1711090373459" duration="3039000" />
       <workItem from="1711094870350" duration="3787000" />
       <workItem from="1711413954940" duration="6693000" />
-      <workItem from="1711422312676" duration="7967000" />
+      <workItem from="1711422312676" duration="8716000" />
+      <workItem from="1711442029515" duration="4038000" />
+      <workItem from="1711504082023" duration="15822000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -137,7 +165,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711421086344</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加一个toolwindow">
+      <option name="closed" value="true" />
+      <created>1711437312314</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711437312314</updated>
+    </task>
+    <task id="LOCAL-00005" summary="添加一个toolwindow">
+      <option name="closed" value="true" />
+      <created>1711437330938</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711437330938</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,7 +202,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init" />
     <MESSAGE value="添加一个弹窗" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加一个弹窗" />
+    <MESSAGE value="添加一个toolwindow" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加一个toolwindow" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
