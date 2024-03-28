@@ -47,6 +47,7 @@ class FinderService(private val project: Project) {
                     sqlIdList.add(id)
                 }
             } }
+        //println(sqlIdList)
 
     }
     private fun createSimpleTree():SimpleTree {
