@@ -3,9 +3,7 @@ package com.qst.develop.toolkit.tablereferencefinder.service
 import com.intellij.ide.highlighter.XmlFileType
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.project.Project
-import com.intellij.psi.PsiMethod
-import com.intellij.psi.PsiMethodCallExpression
-import com.intellij.psi.PsiReference
+import com.intellij.psi.*
 import com.intellij.psi.search.searches.ReferencesSearch
 import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.ui.treeStructure.SimpleTree
@@ -14,7 +12,6 @@ import com.qst.develop.toolkit.tablereferencefinder.model.RefChainModel
 import java.awt.Dimension
 import java.awt.Graphics
 import javax.swing.JLabel
-import com.intellij.psi.PsiManager
 import com.intellij.psi.search.FileTypeIndex.getFiles
 import com.intellij.psi.search.GlobalSearchScope
 import com.intellij.psi.xml.XmlFile
@@ -35,20 +32,33 @@ class FinderService(private val project: Project) {
         // TODO: 2021/8/17 0017  查询Mapper.xml 文件中的表名，找到对应的sql语句的ID
         val sqlIdList = mutableListOf<String?>()
         val psiFiles = getFiles(XmlFileType.INSTANCE, GlobalSearchScope.projectScope(project))
-        psiFiles.stream().filter { file -> file.name.contains("Mapper") }.map { file ->
-            PsiManager.getInstance(project).findFile(file) as XmlFile
-        }.forEach { xmlFile ->
-            //println("fileName:::${xmlFile.name}")
+        val pattern = Regex("\\s$tableName\\s|`$tableName`")
+        psiFiles.stream().filter { file ->
+            file.name.endsWith("Mapper.xml")
+        }.filter { file ->
+            val xmlFile = PsiManager.getInstance(project).findFile(file) as XmlFile
+            pattern.containsMatchIn(xmlFile.text)
+        }.forEach { file ->
+            val xmlFile = PsiManager.getInstance(project).findFile(file) as XmlFile
+            println("fileName:::${xmlFile.name}")
             val rootTag = xmlFile.rootTag
             val subTags = rootTag?.subTags
-            subTags?.forEach { tag ->
-                val id = tag.getAttributeValue("id")
-                if (tag.text.contains(tableName)) {
-                    sqlIdList.add(id)
+            rootTag?.getAttributeValue("namespace")?.let { mapperClass ->
+                val psiInterface =
+                    JavaPsiFacade.getInstance(project).findClass(mapperClass, GlobalSearchScope.allScope(project))
+                        ?: return@forEach
+                println("mapperInterface :::${psiInterface.name}")
+                subTags?.filter { tag ->
+                    pattern.containsMatchIn(tag.text)
+                }?.forEach { tag ->
+                    val id = tag.getAttributeValue("id")
+                    psiInterface.findMethodsByName(id, false).forEach {
+                        println("method:::${it.name}")
+                        findReference(null,it)
+                    }
                 }
-            } }
-        //println(sqlIdList)
-
+            }
+        }
     }
     private fun createSimpleTree():SimpleTree {
         println("init treecom")

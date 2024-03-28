@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75602064-f346-4a98-8a89-63e49db31daa" name="Changes" comment="查询调用链" />
+    <list default="true" id="75602064-f346-4a98-8a89-63e49db31daa" name="Changes" comment="查询调用链">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qst/develop/toolkit/tablereferencefinder/service/FinderService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qst/develop/toolkit/tablereferencefinder/service/FinderService.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +89,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Gradle.Run Plugin.executor": "Run",
+    "Gradle.Run Plugin.executor": "Debug",
     "Gradle.tableReferenceFinder [setupDependencies].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -126,6 +129,7 @@
       <workItem from="1711422312676" duration="8716000" />
       <workItem from="1711442029515" duration="4038000" />
       <workItem from="1711504082023" duration="16273000" />
+      <workItem from="1711603518493" duration="5165000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
