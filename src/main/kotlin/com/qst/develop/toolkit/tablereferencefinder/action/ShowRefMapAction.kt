@@ -13,6 +13,8 @@ import com.qst.develop.toolkit.tablereferencefinder.service.FinderService
 
 class ShowRefMapAction : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
+        e.project?.service<FinderService>()?.chainModelMap?.clear()
+        e.project?.service<FinderService>()?.rootChainModels?.clear()
         e.project?.service<FinderService>()?.findReference(null,e.getData(PlatformDataKeys.PSI_ELEMENT) as PsiMethod)
     }
 
